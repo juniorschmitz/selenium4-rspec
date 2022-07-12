@@ -1,37 +1,37 @@
 # Selenium 4 Ruby Features
 
-A project that was created for showing Selenium 4 new features using Ruby bindings.
+Este projeto foi criado para apresentar algumas novas funcionalidades do Selenium 4 utilizando Ruby bindings.
 
-## What are the project dependencies?
+## Quais são as dependências do projeto?
 - Ruby 2.7.x+
 - RSpec
 - Selenium 4
 - Selenium Devtools
 
-## How to execute?
-Installing dependencies:
+## Como executar?
+Para instalar as dependências:
 ```
 bundle install
 ```
 
-Running the tests:
+Para executar os testes::
 ```
 bundle exec rspec
 ```
 
-If you want to run the tests that use the Selenium Grid locally, you should start the docker-compose configuration:
+Se você desejar executar os testes que fazem uso do Selenium Grid localmente, você deve iniciar as configurações com docker-compose:
 ```
 docker-compose up
 ```
 
-## What does the project includes?
-Exemples of Selenium 4, with:
+## O que o projeto inclui?
+Exemplo de Selenium 4 com Ruby, incluindo:
 - Basic Authentication
-- Network interception and stubbing
+- Network interception e stubbing
 - Relative locators
 - Selenium Grid
-- Specific element screenshot
-- Changing between tabs and windows
-- Exporting pages to PDF
+- Screenshots de elementos específicos
+- Alterando entre abas e janelas
+- Exportando páginas para PDF
 
 Enjoy!
