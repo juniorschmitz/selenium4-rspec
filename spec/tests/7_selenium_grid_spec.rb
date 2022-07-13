@@ -6,12 +6,9 @@ describe('Selenium 4 Grid') do
       :capabilities => caps)
   end
 
-  after(:each) do
-    @driver.quit
-  end
-
   it('Runs on Selenium Grid') do
     @driver.navigate.to "http://google.com"
+    @driver.save_screenshot("reports/screenshot grid_chrome.png")
     expect(@driver.title).to eql "Google"
   end
 end
