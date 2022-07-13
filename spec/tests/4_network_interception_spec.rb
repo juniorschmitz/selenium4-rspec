@@ -4,14 +4,6 @@ describe('Selenium 4 Network Interception') do
   IMAGE_OK = 'https://the-internet.herokuapp.com/img/avatar-blank.jpg'
   IMAGE_POTATO_HEAD = 'https://live.staticflickr.com/4058/4264780554_d35acd7e87_b.jpg'
   IMAGE_SELENIUM_LOGO = 'https://upload.wikimedia.org/wikipedia/commons/d/d5/Selenium_Logo.png'
-  
-  before(:each) do
-    @driver = Selenium::WebDriver.for :chrome
-  end
-
-  after(:each) do
-    @driver.quit
-  end
 
   it('Logs all requests') do
     @driver.intercept do |request, &continue|

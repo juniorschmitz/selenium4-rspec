@@ -1,12 +1,4 @@
 describe('Selenium 4 Element Screenshots') do
-  before(:each) do
-    @driver = Selenium::WebDriver.for :chrome
-  end
-
-  after(:each) do
-    @driver.quit
-  end
-
   it('Takes screenshots of images') do
     @driver.navigate.to 'https://front.serverest.dev/login'
     logo_serverest = @driver.find_element(css: 'img[src*="serverestlogo"]')

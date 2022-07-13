@@ -10,10 +10,6 @@ describe('Selenium 4 Save Page to PDF') do
       :capabilities => caps)
   end
 
-  after(:each) do
-    @driver.quit
-  end
-
   it('Saves page to PDF') do
     @driver.navigate.to 'https://en.wikipedia.org/wiki/Potato'
     @driver.save_print_page("reports/potato#{Time.now.to_i}.pdf")

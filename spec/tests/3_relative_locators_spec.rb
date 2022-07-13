@@ -1,12 +1,4 @@
 describe('Selenium 4 Relative Locators') do
-  before(:each) do
-    @driver = Selenium::WebDriver.for :chrome
-  end
-
-  after(:each) do
-    @driver.quit
-  end
-
   it('Finds by relative locator to the right') do
     @driver.navigate.to "https://compass.uol"
     a_header_careers = @driver.find_element(css: '.Menu_menu__Orucn a[href*="/careers/"]')

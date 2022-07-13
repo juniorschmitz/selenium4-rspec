@@ -12,7 +12,13 @@ RSpec.configure do |config|
   end
 
   config.shared_context_metadata_behavior = :apply_to_host_groups
+
+  config.before(:each) do
+    @driver = Selenium::WebDriver.for :chrome
+  end
+
+  config.after(:each) do
+    @driver.quit
+  end  
 end
 
-# https://www.selenium.dev/selenium/docs/api/rb/Selenium/WebDriver/DriverExtensions/HasNetworkInterception.html
-# https://www.selenium.dev/pt-br/documentation/webdriver/bidirectional/bidi_api/

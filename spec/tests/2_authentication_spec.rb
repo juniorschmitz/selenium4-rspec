@@ -1,14 +1,7 @@
 describe('Selenium 4 Authentication') do
   USERNAME = "admin"
   PASSWORD = "admin"
-  before(:each) do
-    @driver = Selenium::WebDriver.for :chrome
-  end
-
-  after(:each) do
-    @driver.quit
-  end
-
+  
   it('Authenticates with Basic Authentication (old way)') do
     @driver.navigate.to "https://#{USERNAME}:#{PASSWORD}@the-internet.herokuapp.com/basic_auth"
     p_message_authenticated = @driver.find_element(css: ".example p")
