@@ -1,6 +1,7 @@
 describe('Selenium 4 Network Interception') do
   IMAGE_BROKEN_1 = 'https://the-internet.herokuapp.com/asdf.jpg'
   IMAGE_BROKEN_2 = 'https://the-internet.herokuapp.com/hjkl.jpg'
+  IMAGE_OK = 'https://the-internet.herokuapp.com/img/avatar-blank.jpg'
   IMAGE_POTATO_HEAD = 'https://live.staticflickr.com/4058/4264780554_d35acd7e87_b.jpg'
   IMAGE_SELENIUM_LOGO = 'https://upload.wikimedia.org/wikipedia/commons/d/d5/Selenium_Logo.png'
   
@@ -44,6 +45,18 @@ describe('Selenium 4 Network Interception') do
     @driver.find_elements(css: '#content img').each do |element|
       expect(element.displayed?).to eql true
     end
+  end
+
+  it('Stubs with errors') do
+    @driver.intercept do |request, &continue|
+      continue.call(request) do |response|
+        if request.url == IMAGE_OK
+          response.code = 404
+          response.body = 'Not Found'
+        end
+      end
+    end
+    @driver.navigate.to 'https://the-internet.herokuapp.com/broken_images'
   end
 
   it('Stubs Compass Logo') do
